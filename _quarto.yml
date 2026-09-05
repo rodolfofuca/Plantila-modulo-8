@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Mi sitio de reportes"
+  title: "Mi sitio de reportes de Rodo"
   navbar:
     left:
       - text: "Sobre este sitio"
