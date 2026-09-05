@@ -23,6 +23,6 @@ website:
 
 format:
   html:
-    theme: minty
+    theme: journal #nuevo tema que me gustó de la página del readme
     toc: true
     lang: es
