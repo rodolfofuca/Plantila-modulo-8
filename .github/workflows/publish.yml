@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -31,16 +31,20 @@ jobs:
 
       - name: Instalar paquetes de R
         uses: r-lib/actions/setup-r-dependencies@v2
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
         with:
-          packages: |
-            any::ggplot2
-            any::dplyr
-            any::knitr
-            any::rmarkdown
-            any::readr
+          python-version: "3.12"
+          cache: 'pip'
+
+      - name: Instalar paquetes de Python
+        run: pip install -r requirements.txt
 
       - name: Renderizar sitio
         run: quarto render
+        env:
+          RETICULATE_PYTHON: ${{ env.pythonLocation }}/bin/python3
 
       - name: Subir artefacto para Pages
         uses: actions/upload-pages-artifact@v3
