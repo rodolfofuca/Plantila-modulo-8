@@ -20,6 +20,9 @@ website:
       - section: "Último reporte"
         contents:
           - mis_reportes/reporte-03.qmd
+      - section: "Último reporte con dos lenguajes (Pyhton y R)"
+        contents:
+          - mis_reportes/reporte-04.qmd
 
 format:
   html:
